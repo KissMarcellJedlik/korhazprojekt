@@ -8,15 +8,21 @@ namespace korhazprojekt
 {
     public class Beteg
     {
-        public string Név { get;  }
-        public string Betegség { get; set; }
-        public string Vértípus { get;  }
+        public string Nev { get; set; }
+        public string Betegseg { get; set; }
+        public bool Gyogyult { get; private set; }
 
-        public Beteg(string név, string betegség, string vértípus)
+        public Beteg(string nev, string betegseg)
         {
-            Név = név;
-            Betegség = betegség;
-            Vértípus = vértípus;
+            Nev = nev;
+            Betegseg = betegseg;
+            Gyogyult = false;
+        }
+
+        public void Kezeles()
+        {
+            Gyogyult = true;
+            Console.WriteLine($"{Nev} sikeresen meggyógyult a(z) {Betegseg} betegségből.");
         }
     }
 }

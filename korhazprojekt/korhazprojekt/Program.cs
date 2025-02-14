@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            List<Beteg> betegek = new List<Beteg>();
+            List<Orvos> orvosok = new List<Orvos>() { new Orvos("Nagy László", "Belgyógyászat") };
+
         }
     }
 }

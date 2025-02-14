@@ -8,16 +8,24 @@ namespace korhazprojekt
 {
     public class Orvos
     {
-        public string Név { get;  }
-        public string Szakterület { get; set; }
-        //mennyiért dolgozik
-        public double Ár { get; set; }
+        public string Nev { get; set; }
+        public string Szak { get; set; }
 
-        public Orvos(string név, string szakterület, double ár)
+        public Orvos(string nev, string szak)
         {
-            Név = név;
-            Szakterület = szakterület;
-            Ár = ár;
+            Nev = nev;
+            Szak = szak;
+        }
+
+        public void Diagnosztizal(Beteg beteg)
+        {
+            Console.WriteLine($"Dr. {Nev} diagnosztizálta {beteg.Nev}-t: {beteg.Betegseg}.");
+        }
+
+        public void Kezel(Beteg beteg)
+        {
+            beteg.Kezeles();
+            Console.WriteLine($"Dr. {Nev} kezelte {beteg.Nev}-t.");
         }
     }
 }
