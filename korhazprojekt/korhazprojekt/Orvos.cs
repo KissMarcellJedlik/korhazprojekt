@@ -8,7 +8,7 @@ namespace korhazprojekt
 {
     public class Orvos
     {
-        public string Nev { get; set; }
+        public string Nev { get;  }
         public string Szak { get; set; }
 
         public Orvos(string nev, string szak)

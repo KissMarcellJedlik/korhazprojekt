@@ -8,7 +8,7 @@ namespace korhazprojekt
 {
     public class Beteg
     {
-        public string Nev { get; set; }
+        public string Nev { get;  }
         public string Betegseg { get; set; }
         public bool Gyogyult { get; private set; }
 

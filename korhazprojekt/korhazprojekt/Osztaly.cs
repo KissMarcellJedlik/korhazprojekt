@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace korhazprojekt
 {
-    internal class Osztaly
+    public class Osztaly
     {
+        public string Nev { get; set; }
+        public List<Beteg> Betegek { get; set; }
+
+        public Osztaly(string nev)
+        {
+            Nev = nev;
+            Betegek = new List<Beteg>();
+        }
+
+        public void FelveszBeteget(Beteg beteg)
+        {
+            Betegek.Add(beteg);
+            Console.WriteLine($"{beteg.Nev} felvéve a {Nev} osztályra.");
+        }
     }
 }
