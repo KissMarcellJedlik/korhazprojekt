@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace korhazprojekt
 {
-    internal class Gyogyszer
+    public class Gyogyszer
     {
+        public string Nev { get; set; }
+        public string Hatas { get; set; }
+
+        public Gyogyszer(string nev, string hatas)
+        { 
+            Nev = nev;
+            Hatas = hatas;
+        }
+
+        public void Adagol(Beteg beteg)
+        {
+            Console.WriteLine($"{Nev} gyógyszer beadva {beteg.Nev}-nek, hatás: {Hatas}");
+        }
     }
 }
