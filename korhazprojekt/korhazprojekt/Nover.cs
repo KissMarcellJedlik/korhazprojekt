@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace korhazprojekt
 {
-    internal class Nover
+    public class Nover
     {
+        public string Nev { get;  }
+
+        public Nover(string nev)
+        {
+            Nev = nev;
+        }
+        public void Segit(Beteg beteg)
+        {
+            Console.WriteLine($"{Nev} segitett {beteg.Nev}-nek a kezelés során.");
+
+        }
     }
 }
