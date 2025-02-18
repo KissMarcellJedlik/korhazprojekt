@@ -7,10 +7,12 @@
             List<Beteg> betegek = new List<Beteg>();
             List<Orvos> orvosok = new List<Orvos>() { new Orvos("Nagy László", "Belgyógyászat") };
             List<Osztaly> osztalyok = new List<Osztaly>() { new Osztaly("Belgyógyászat") };
+            List<Nover> noverek = new List<Nover>() { new Nover("Kovács Anna") };
             new Osztaly("Plasztika");
             new Osztaly("Bőrgyógyászat");
             new Orvos("Szegedi István", "Plasztika");
             new Orvos("Galamb Péter", "Bőrgyógyászat");
+
                                                                                            
             while (true) 
             {
