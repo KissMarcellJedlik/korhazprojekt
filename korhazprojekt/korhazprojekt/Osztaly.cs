@@ -9,7 +9,7 @@ namespace korhazprojekt
     public class Osztaly
     {
         public string Nev { get; set; }
-        public List<Beteg> Betegek { get; set; }
+        private List<Beteg> Betegek { get; set; }
 
         public Osztaly(string nev)
         {
