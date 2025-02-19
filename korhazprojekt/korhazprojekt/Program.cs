@@ -7,15 +7,24 @@
             List<Beteg> betegek = new List<Beteg>();
             List<Orvos> orvosok = new List<Orvos>() { new Orvos("Nagy László", "Belgyógyászat"),
                                                       new Orvos("Kiss Péter", "Sebészet"),
-                                                      new Orvos("Szabó Éva", "Neurológia")
+                                                      new Orvos("Szabó Éva", "Neurológia"),
+                                                      new Orvos("Szegedi István", "Plasztika"),
+                                                      new Orvos("Galamb Péter", "Bőrgyógyászat")
                                                     };
-            List<Osztaly> osztalyok = new List<Osztaly>() { new Osztaly("Belgyógyászat") };
+            List<Osztaly> osztalyok = new List<Osztaly>() { new Osztaly("Belgyógyászat"),
+                                                            new Osztaly("Plasztika"),
+                                                            new Osztaly("Bőrgyógyászat"),
+                                                            new Osztaly("Sebészet"),
+                                                            new Osztaly("Neurológia") };
             List<Nover> noverek = new List<Nover>() { new Nover("Kovács Anna") };
-            List<Gyogyszer> gyogyszerek = new List<Gyogyszer>() { new Gyogyszer("Paracetamol", "Lázcsillapítás") };
-            new Osztaly("Plasztika");
-            new Osztaly("Bőrgyógyászat");
-            new Orvos("Szegedi István", "Plasztika");
-            new Orvos("Galamb Péter", "Bőrgyógyászat");
+            List<Gyogyszer> gyogyszerek = new List<Gyogyszer>() { new Gyogyszer("Paracetamol", "Lázcsillapítás"), 
+                                                                  new Gyogyszer("Kenőcs", "Bőrgyógyítás"),
+                                                                  new Gyogyszer("Ibuprofen", "Gyulladáscsökkentő"),
+                                                                  new Gyogyszer("Amoxicillin", "Antibiotikum"),
+                                                                  new Gyogyszer("Lidocain", "Érzéstelenítés")
+                                                                };
+            
+            
 
             while (true)
             {
