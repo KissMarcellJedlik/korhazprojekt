@@ -48,12 +48,17 @@
                     case "3":
                         Kezeles(orvosok, osztalyok);
                         break;
+                    case "4":
+                        GyogyszerBeadas(betegek, gyogyszerek);
+                        break;
                     case "5":
                         return;
                     default:
                         Console.WriteLine("Érvénytelen választás!");
                         break;
                 }
+                Console.WriteLine("\nNyomj Entert a folytatáshoz...");
+                Console.ReadLine();
             }
 
         }
@@ -116,6 +121,28 @@
 
             }
 
+        }
+        static void GyogyszerBeadas(List<Beteg> betegek, List<Gyogyszer> gyogyszerek)
+        {
+            Console.WriteLine("Válassz egy beteget:");
+            for (int i = 0; i < betegek.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {betegek[i].Nev} - {betegek[i].Betegseg}");
+            }
+            int betegValasztas = Convert.ToInt32(Console.ReadLine()) - 1;
+            if (betegValasztas >= 0 && betegValasztas < betegek.Count)
+            {
+                Console.WriteLine("Válassz egy gyógyszert:");
+                for (int i = 0; i < gyogyszerek.Count; i++)
+                {
+                    Console.WriteLine($"{i + 1}. {gyogyszerek[i].Nev} - {gyogyszerek[i].Hatas}");
+                }
+                int gyogyszerValasztas = Convert.ToInt32(Console.ReadLine()) - 1;
+                if (gyogyszerValasztas >= 0 && gyogyszerValasztas < gyogyszerek.Count)
+                {
+                    Console.WriteLine(gyogyszerek[gyogyszerValasztas].Adagol(betegek[betegValasztas]));
+                }
+            }
         }
     }
 }
