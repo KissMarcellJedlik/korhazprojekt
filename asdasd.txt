@@ -1,0 +1,20 @@
+foreach (var osztaly in osztalyok)
+{
+    if (osztaly.Nev.Contains(betegseg, StringComparison.OrdinalIgnoreCase))
+    {
+        osztaly.FelveszBeteget(ujBeteg);
+        break;
+    }
+    else
+    {
+       nemjo += 1;
+        
+    };
+}
+if (nemjo > 5)
+{
+    Console.WriteLine($"Az általad megadott osztály({betegseg}) nem található nálunk ezért nem tudtuk felvenni betegnek.");
+}
+else if (nemjo < 6)
+{
+    Console.WriteLine($"{nev

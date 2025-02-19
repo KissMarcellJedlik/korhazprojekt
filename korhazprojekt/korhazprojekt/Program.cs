@@ -4,15 +4,17 @@
     {
         static void Main(string[] args)
         {
-            List<Beteg> betegek = new List<Beteg>() {
+            
+            List<Beteg> Betegek = new List<Beteg>()
+            {
                 new Beteg("Tóth Kendepúz", "Bőrgyógyászat"),
                 new Beteg("Sampon PálInt", "Plasztika"),
-                new Beteg("Skót Szalma", "Fogászat")}
-                
-                
-                
-                
-                ;
+                new Beteg("Skót Szalma", "Fogászat")
+            }    
+            ;
+            
+
+
             List<Orvos> orvosok = new List<Orvos>() { new Orvos("Nagy László", "Belgyógyászat"),
                                                       new Orvos("Kiss Péter", "Sebészet"),
                                                       new Orvos("Szabó Éva", "Neurológia"),
@@ -50,7 +52,7 @@
                 switch (valasztas)
                 {
                     case "1":
-                        BetegFelvetele(betegek, osztalyok);
+                        BetegFelvetele(Betegek, osztalyok);
                         break;
                     case "2":
                         Diagnosztizalas(orvosok, osztalyok);
@@ -59,7 +61,7 @@
                         Kezeles(orvosok, osztalyok);
                         break;
                     case "4":
-                        GyogyszerBeadas(betegek, gyogyszerek);
+                        GyogyszerBeadas(Betegek, gyogyszerek);
                         break;
                     case "5":
                         return;
@@ -80,8 +82,8 @@
             string betegseg = Console.ReadLine();
             Beteg ujBeteg = new Beteg(nev, betegseg);
             betegek.Add(ujBeteg);
-            
-            
+
+            int nemjo = 0;
             foreach (var osztaly in osztalyok)
             {
                 if (osztaly.Nev.Contains(betegseg, StringComparison.OrdinalIgnoreCase))
@@ -89,9 +91,19 @@
                     osztaly.FelveszBeteget(ujBeteg);
                     break;
                 }
-                else {
-                    Console.WriteLine($"Az általad megadott osztály({betegseg}) nem egyezik a(z) {osztaly.Nev}-l ezért nem tudtuk felvenni a beteget.");
-                      }  ;
+                else
+                {
+                   nemjo += 1;
+                    
+                };
+            }
+            if (nemjo > 5)
+            {
+                Console.WriteLine($"Az általad megadott osztály({betegseg}) nem található nálunk ezért nem tudtuk felvenni betegnek.");
+            }
+            else if (nemjo < 6)
+            {
+                Console.WriteLine($"{nev}-t felvettük a {betegseg} nevű osztályra.");
             }
         }
         static void Diagnosztizalas(List<Orvos> orvosok, List<Osztaly> osztalyok)
@@ -128,12 +140,13 @@
             int kezeloOrvos = Convert.ToInt32(Console.ReadLine()) - 1;
             if (kezeloOrvos >= 0 && kezeloOrvos < orvosok.Count)
             {
-                Osztaly orvosOsztalya = osztalyok.Find(o => o.Nev == orvosok[kezeloOrvos].Szak);
+                Osztaly orvosOsztalya = osztalyok.Find(o => o.Nev == orvosok[kezeloOrvos].Szak)!;
                 if (orvosOsztalya != null)
                 {
                     foreach (var beteg in orvosOsztalya.Betegek)
                     {
                         Console.WriteLine(orvosok[kezeloOrvos].Kezel(beteg));
+                        
                     }
                 }
 
