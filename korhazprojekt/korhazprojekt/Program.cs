@@ -124,9 +124,6 @@
                         {
                             Console.WriteLine(orvosok[valasztottOrvos].Diagnosztizal(beteg));
                         }
-                    
-                    
-                    
                 }
             }
         }
