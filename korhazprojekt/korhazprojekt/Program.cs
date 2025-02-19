@@ -28,6 +28,7 @@
 
             while (true)
             {
+                Console.Clear();
                 Console.WriteLine("\nKórház Menü:");
                 Console.WriteLine("1. Beteg felvétele");
                 Console.WriteLine("2. Diagnózis");
@@ -45,7 +46,15 @@
                         string betegseg = Console.ReadLine();
                         Beteg ujBeteg = new Beteg(nev, betegseg);
                         betegek.Add(ujBeteg);
-                        osztalyok[0].FelveszBeteget(ujBeteg);
+
+                        foreach (var osztaly in osztalyok)
+                        {
+                            if (osztaly.Nev.Contains(betegseg, StringComparison.OrdinalIgnoreCase))
+                            {
+                                osztaly.FelveszBeteget(ujBeteg);
+                                break;
+                            }
+                        }
                         break;
                     case "2":
                         if (betegek.Count > 0)
