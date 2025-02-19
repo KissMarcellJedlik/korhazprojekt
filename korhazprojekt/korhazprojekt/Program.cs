@@ -57,13 +57,22 @@
                         }
                         break;
                     case "2":
-                        if (betegek.Count > 0)
+                        Console.WriteLine("Válassz egy orvost a diagnózishoz:");
+                        for (int i = 0; i < orvosok.Count; i++)
                         {
-                            orvosok[0].Diagnosztizal(betegek[0]);
+                            Console.WriteLine($"{i + 1}. Dr. {orvosok[i].Nev} - {orvosok[i].Szak}");
                         }
-                        else
+                        int valasztottOrvos = Convert.ToInt32(Console.ReadLine()) - 1;
+                        if (valasztottOrvos >= 0 && valasztottOrvos < orvosok.Count)
                         {
-                            Console.WriteLine("Nincs diagnosztizálható beteg!");
+                            Osztaly orvosOsztalya = osztalyok.Find(o => o.Nev == orvosok[valasztottOrvos].Szak);
+                            if (orvosOsztalya != null)
+                            {
+                                foreach (var beteg in orvosOsztalya.Betegek)
+                                {
+                                    orvosok[valasztottOrvos].Diagnosztizal(beteg);
+                                }
+                            }
                         }
                         break;
                 }
