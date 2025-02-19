@@ -75,6 +75,11 @@
                             }
                         }
                         break;
+                    case "5":
+                        return;
+                    default:
+                        Console.WriteLine("Érvénytelen választás!");
+                        break;
                 }
             }
 
