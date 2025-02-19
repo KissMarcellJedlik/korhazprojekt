@@ -14,9 +14,9 @@ namespace korhazprojekt
         {
             Nev = nev;
         }
-        public void Segit(Beteg beteg)
+        public string Segit(Beteg beteg)
         {
-            Console.WriteLine($"{Nev} segitett {beteg.Nev}-nek a kezelés során.");
+            return ($"{Nev} segitett {beteg.Nev}-nek a kezelés során.");
 
         }
     }

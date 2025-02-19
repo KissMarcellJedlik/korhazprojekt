@@ -17,15 +17,15 @@ namespace korhazprojekt
             Szak = szak;
         }
 
-        public void Diagnosztizal(Beteg beteg)
+        public string Diagnosztizal(Beteg beteg)
         {
-            Console.WriteLine($"Dr. {Nev} diagnosztizálta {beteg.Nev}-t: {beteg.Betegseg}.");
+            return ($"Dr. {Nev} diagnosztizálta {beteg.Nev}-t: {beteg.Betegseg}.");
         }
 
-        public void Kezel(Beteg beteg)
+        public string Kezel(Beteg beteg)
         {
-            beteg.Kezeles();
-            Console.WriteLine($"Dr. {Nev} kezelte {beteg.Nev}-t.");
+            return beteg.Kezeles();
+            
         }
     }
 }

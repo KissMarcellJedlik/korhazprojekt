@@ -19,10 +19,10 @@ namespace korhazprojekt
             Gyogyult = false;
         }
 
-        public void Kezeles()
+        public string Kezeles()
         {
             Gyogyult = true;
-            Console.WriteLine($"{Nev} sikeresen meggyógyult a(z) {Betegseg} betegségből.");
+            return ($"{Nev} sikeresen meggyógyult a(z) {Betegseg} betegségből.");
         }
     }
 }

@@ -17,9 +17,9 @@ namespace korhazprojekt
             Hatas = hatas;
         }
 
-        public void Adagol(Beteg beteg)
+        public string Adagol(Beteg beteg)
         {
-            Console.WriteLine($"{Nev} gyógyszer beadva {beteg.Nev}-nek, hatás: {Hatas}");
+            return($"{Nev} gyógyszer beadva {beteg.Nev}-nek, hatás: {Hatas}");
         }
     }
 }
