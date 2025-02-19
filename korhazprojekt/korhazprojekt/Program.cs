@@ -5,7 +5,10 @@
         static void Main(string[] args)
         {
             List<Beteg> betegek = new List<Beteg>();
-            List<Orvos> orvosok = new List<Orvos>() { new Orvos("Nagy László", "Belgyógyászat") };
+            List<Orvos> orvosok = new List<Orvos>() { new Orvos("Nagy László", "Belgyógyászat"),
+                                                      new Orvos("Kiss Péter", "Sebészet"),
+                                                      new Orvos("Szabó Éva", "Neurológia")
+                                                    };
             List<Osztaly> osztalyok = new List<Osztaly>() { new Osztaly("Belgyógyászat") };
             List<Nover> noverek = new List<Nover>() { new Nover("Kovács Anna") };
             List<Gyogyszer> gyogyszerek = new List<Gyogyszer>() { new Gyogyszer("Paracetamol", "Lázcsillapítás") };
