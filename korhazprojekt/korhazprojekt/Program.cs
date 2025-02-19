@@ -80,7 +80,8 @@
             string betegseg = Console.ReadLine();
             Beteg ujBeteg = new Beteg(nev, betegseg);
             betegek.Add(ujBeteg);
-
+            
+            
             foreach (var osztaly in osztalyok)
             {
                 if (osztaly.Nev.Contains(betegseg, StringComparison.OrdinalIgnoreCase))
@@ -88,6 +89,9 @@
                     osztaly.FelveszBeteget(ujBeteg);
                     break;
                 }
+                else {
+                    Console.WriteLine($"Az általad megadott osztály({betegseg}) nem egyezik a(z) {osztaly.Nev}-l ezért nem tudtuk felvenni a beteget.");
+                      }  ;
             }
         }
         static void Diagnosztizalas(List<Orvos> orvosok, List<Osztaly> osztalyok)
@@ -103,10 +107,14 @@
                 Osztaly orvosOsztalya = osztalyok.Find(o => o.Nev == orvosok[valasztottOrvos].Szak);
                 if (orvosOsztalya != null)
                 {
-                    foreach (var beteg in orvosOsztalya.Betegek)
-                    {
-                        Console.WriteLine(orvosok[valasztottOrvos].Diagnosztizal(beteg));
-                    }
+                    
+                        foreach (var beteg in orvosOsztalya.Betegek)
+                        {
+                            Console.WriteLine(orvosok[valasztottOrvos].Diagnosztizal(beteg));
+                        }
+                    
+                    
+                    
                 }
             }
         }
