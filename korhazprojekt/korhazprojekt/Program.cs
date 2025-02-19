@@ -45,6 +45,9 @@
                     case "2":
                         Diagnosztizalas(orvosok, osztalyok);
                         break;
+                    case "3":
+                        Kezeles(orvosok, osztalyok);
+                        break;
                     case "5":
                         return;
                     default:
@@ -91,6 +94,28 @@
                     }
                 }
             }
+        }
+        static void Kezeles(List<Orvos> orvosok, List<Osztaly> osztalyok)
+        {
+            Console.WriteLine("Válassz egy orvost a kezeléshez:");
+            for (int i = 0; i < orvosok.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. Dr. {orvosok[i].Nev} - {orvosok[i].Szak}");
+            }
+            int kezeloOrvos = Convert.ToInt32(Console.ReadLine()) - 1;
+            if (kezeloOrvos >= 0 && kezeloOrvos < orvosok.Count)
+            {
+                Osztaly orvosOsztalya = osztalyok.Find(o => o.Nev == orvosok[kezeloOrvos].Szak);
+                if (orvosOsztalya != null)
+                {
+                    foreach (var beteg in orvosOsztalya.Betegek)
+                    {
+                        Console.WriteLine(orvosok[kezeloOrvos].Kezel(beteg));
+                    }
+                }
+
+            }
+
         }
     }
 }
