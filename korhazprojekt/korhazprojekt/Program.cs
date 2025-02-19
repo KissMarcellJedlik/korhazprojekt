@@ -40,21 +40,7 @@
                 switch (valasztas)
                 {
                     case "1":
-                        Console.Write("Beteg neve: ");
-                        string nev = Console.ReadLine();
-                        Console.Write("Betegség: ");
-                        string betegseg = Console.ReadLine();
-                        Beteg ujBeteg = new Beteg(nev, betegseg);
-                        betegek.Add(ujBeteg);
-
-                        foreach (var osztaly in osztalyok)
-                        {
-                            if (osztaly.Nev.Contains(betegseg, StringComparison.OrdinalIgnoreCase))
-                            {
-                                osztaly.FelveszBeteget(ujBeteg);
-                                break;
-                            }
-                        }
+                        BetegFelvetele(betegek, osztalyok);
                         break;
                     case "2":
                         Console.WriteLine("Válassz egy orvost a diagnózishoz:");
@@ -83,6 +69,24 @@
                 }
             }
 
+        }
+        static void BetegFelvetele(List<Beteg> betegek, List<Osztaly> osztalyok)
+        {
+            Console.Write("Beteg neve: ");
+            string nev = Console.ReadLine();
+            Console.Write("Betegség: ");
+            string betegseg = Console.ReadLine();
+            Beteg ujBeteg = new Beteg(nev, betegseg);
+            betegek.Add(ujBeteg);
+
+            foreach (var osztaly in osztalyok)
+            {
+                if (osztaly.Nev.Contains(betegseg, StringComparison.OrdinalIgnoreCase))
+                {
+                    osztaly.FelveszBeteget(ujBeteg);
+                    break;
+                }
+            }
         }
     }
 }
