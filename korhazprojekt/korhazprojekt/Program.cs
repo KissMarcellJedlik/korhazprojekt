@@ -4,10 +4,19 @@
     {
         static void Main(string[] args)
         {
-            List<Beteg> betegek = new List<Beteg>();
+            List<Beteg> betegek = new List<Beteg>() {
+                new Beteg("Tóth Kendepúz", "Bőrgyógyászat"),
+                new Beteg("Sampon PálInt", "Plasztika"),
+                new Beteg("Skót Szalma", "Fogászat")}
+                
+                
+                
+                
+                ;
             List<Orvos> orvosok = new List<Orvos>() { new Orvos("Nagy László", "Belgyógyászat"),
                                                       new Orvos("Kiss Péter", "Sebészet"),
                                                       new Orvos("Szabó Éva", "Neurológia"),
+                                                      new Orvos("Pakky Makky", "Fogászat"),
                                                       new Orvos("Szegedi István", "Plasztika"),
                                                       new Orvos("Galamb Péter", "Bőrgyógyászat")
                                                     };
@@ -15,11 +24,12 @@
                                                             new Osztaly("Plasztika"),
                                                             new Osztaly("Bőrgyógyászat"),
                                                             new Osztaly("Sebészet"),
+                                                            new Osztaly("Fogászat"),
                                                             new Osztaly("Neurológia") };
             List<Nover> noverek = new List<Nover>() { new Nover("Kovács Anna") };
             List<Gyogyszer> gyogyszerek = new List<Gyogyszer>() { new Gyogyszer("Paracetamol", "Lázcsillapítás"), 
                                                                   new Gyogyszer("Kenőcs", "Bőrgyógyítás"),
-                                                                  new Gyogyszer("Ibuprofen", "Gyulladáscsökkentő"),
+                                                                  new Gyogyszer("Ibuprofen", "Gyulladáscsökkentő"),                                                                 
                                                                   new Gyogyszer("Amoxicillin", "Antibiotikum"),
                                                                   new Gyogyszer("Lidocain", "Érzéstelenítés")
                                                                 };
