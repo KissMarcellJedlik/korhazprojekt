@@ -5,13 +5,7 @@
         static void Main(string[] args)
         {
             
-            List<Beteg> Betegek = new List<Beteg>()
-            {
-                new Beteg("Tóth Kendepúz", "Bőrgyógyászat"),
-                new Beteg("Sampon PálInt", "Plasztika"),
-                new Beteg("Skót Szalma", "Fogászat")
-            }    
-            ;
+            List<Beteg> Betegek = new List<Beteg>();
             
 
 
