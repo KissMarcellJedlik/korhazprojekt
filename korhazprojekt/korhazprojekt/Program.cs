@@ -43,23 +43,7 @@
                         BetegFelvetele(betegek, osztalyok);
                         break;
                     case "2":
-                        Console.WriteLine("Válassz egy orvost a diagnózishoz:");
-                        for (int i = 0; i < orvosok.Count; i++)
-                        {
-                            Console.WriteLine($"{i + 1}. Dr. {orvosok[i].Nev} - {orvosok[i].Szak}");
-                        }
-                        int valasztottOrvos = Convert.ToInt32(Console.ReadLine()) - 1;
-                        if (valasztottOrvos >= 0 && valasztottOrvos < orvosok.Count)
-                        {
-                            Osztaly orvosOsztalya = osztalyok.Find(o => o.Nev == orvosok[valasztottOrvos].Szak);
-                            if (orvosOsztalya != null)
-                            {
-                                foreach (var beteg in orvosOsztalya.Betegek)
-                                {
-                                    orvosok[valasztottOrvos].Diagnosztizal(beteg);
-                                }
-                            }
-                        }
+                        Diagnosztizalas(orvosok, osztalyok);
                         break;
                     case "5":
                         return;
@@ -85,6 +69,26 @@
                 {
                     osztaly.FelveszBeteget(ujBeteg);
                     break;
+                }
+            }
+        }
+        static void Diagnosztizalas(List<Orvos> orvosok, List<Osztaly> osztalyok)
+        {
+            Console.WriteLine("Válassz egy orvost a diagnózishoz:");
+            for (int i = 0; i < orvosok.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. Dr. {orvosok[i].Nev} - {orvosok[i].Szak}");
+            }
+            int valasztottOrvos = Convert.ToInt32(Console.ReadLine()) - 1;
+            if (valasztottOrvos >= 0 && valasztottOrvos < orvosok.Count)
+            {
+                Osztaly orvosOsztalya = osztalyok.Find(o => o.Nev == orvosok[valasztottOrvos].Szak);
+                if (orvosOsztalya != null)
+                {
+                    foreach (var beteg in orvosOsztalya.Betegek)
+                    {
+                        Console.WriteLine(orvosok[valasztottOrvos].Diagnosztizal(beteg));
+                    }
                 }
             }
         }
