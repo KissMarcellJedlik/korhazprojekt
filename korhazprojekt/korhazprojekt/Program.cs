@@ -72,6 +72,7 @@
         {
             Console.Write("Beteg neve: ");
             string nev = Console.ReadLine();
+            Console.WriteLine("\nOsztályok : Belgyógyászat, Plasztika, Neurrológia, Fogászat, Bőrgyógyászat, Sebészet.");
             Console.Write("Betegség: ");
             string betegseg = Console.ReadLine();
             Beteg ujBeteg = new Beteg(nev, betegseg);
